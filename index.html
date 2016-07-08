@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="description" content="Add User Form Using jQuery">
+	<title>Add User</title>
+	<script src="js/jquery-2.1.4.min.js"></script>
+	<script>
+		$(document).ready(function(){
+			$('form').submit(function(){
+				$('#users').append(	"<tr>" + 
+									"<td>" + $("#firstName").val() + "</td>" +
+									"<td>" + $("#lastName").val() + "</td>" +
+									"<td>" + $("#email").val() + "</td>"+
+									"<td>" + $("#phone").val() + "</td>"+
+									"</tr>");
+					$(".textInput").val();
+					return false
+				});
+		});
+	</script>
+	<style>
+	*{margin: 0;padding: 0;}
+	#wrapper{width: 600px; margin: 20px auto;}
+	table {
+		width: 600px;
+		border: 1px solid black; 	
+	}
+	label, input{ 
+		display: block;
+		margin: 10px 0 5px 50px;
+	}
+	.subBtn {
+		margin: 10px 0 0 180px;
+	}
+	</style>
+</head>
+<body>
+<div id="wrapper">
+	<div id="container">
+		<table id="users">
+			<thead>
+				<tr>
+					<th>First:</th>
+					<th>Last:</th>
+					<th>email:</th>
+					<th>Phone:</th>
+				</tr>
+			</thead>
+		</table>
+		<br>
+		<h1>Add User</h1>
+		<hr>
+		<form action="process.php" method="post">
+			<label>First Name: </label>
+			<input class="textInput" type="text" id="firstName" name="firstName">
+			<label>Last Name:</label>
+			<input class="textInput" type="text" id="lastName" name="lastName">
+			<label>e-mail address:</label>
+			<input class="textInput" type="text" id="email" name="email">
+			<label>contact number:</label>
+			<input class="textInput" type="text" id="phone" name="phone">
+			<input class="subBtn" type="submit" name="submit">
+		</form>
+	</div>
+
+</div>
+	
+</body>
+</html>
